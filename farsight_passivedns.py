@@ -116,10 +116,10 @@ class FarsightDnsdbParser():
                         passivedns_object.add_attribute(**self._parse_attribute(comment, 'rdata', rdata))
                 for feature, value in result.items():
                     passivedns_object.add_attribute(**self._parse_attribute(comment, feature, value))
-                if result.get('time_first'):
-                    passivedns_object.first_seen = result['time_first']
-                if result.get('time_last'):
-                    passivedns_object.last_seen = result['time_last']
+                #if result.get('time_first'):
+                #    passivedns_object.first_seen = result['time_first']
+                #if result.get('time_last'):
+                #    passivedns_object.last_seen = result['time_last']
                 passivedns_object.add_reference(self.attribute['uuid'], 'related-to')
                 self.misp_event.add_object(passivedns_object)
 
@@ -172,8 +172,8 @@ def parse_input(attribute, config):
         'ignore_limited': True,
         'humantime': True
     }
-    if attribute.get('first_seen'):
-        lookup_args['time_first_after'] = parse_timestamp(attribute['first_seen'])
+    #if attribute.get('first_seen'):
+    #    lookup_args['time_first_after'] = parse_timestamp(attribute['first_seen'])
     attribute_type = attribute['type']
     if attribute_type in flex_query_input:
         return flex_queries, (lookup_args, attribute['value'])
