@@ -93,15 +93,15 @@ class FarsightDnsdbParser():
         self.misp_event.add_attribute(**attribute)
         self.passivedns_mapping = {
             'bailiwick': {'type': 'domain', 'object_relation': 'bailiwick'},
-            'count': {'type': 'counter', 'object_relation': 'count'},
+            #'count': {'type': 'counter', 'object_relation': 'count'},
             'raw_rdata': {'type': 'text', 'object_relation': 'raw_rdata'},
             'rdata': {'type': 'text', 'object_relation': 'rdata'},
-            'rrname': {'type': 'text', 'object_relation': 'rrname'},
-            'rrtype': {'type': 'text', 'object_relation': 'rrtype'},
-            'time_first': {'type': 'datetime', 'object_relation': 'time_first'},
-            'time_last': {'type': 'datetime', 'object_relation': 'time_last'},
-            'zone_time_first': {'type': 'datetime', 'object_relation': 'zone_time_first'},
-            'zone_time_last': {'type': 'datetime', 'object_relation': 'zone_time_last'}
+            'rrname': {'type': 'text', 'object_relation': 'rrname'}
+            #'rrtype': {'type': 'text', 'object_relation': 'rrtype'},
+            #'time_first': {'type': 'datetime', 'object_relation': 'time_first'},
+            #'time_last': {'type': 'datetime', 'object_relation': 'time_last'},
+            #'zone_time_first': {'type': 'datetime', 'object_relation': 'zone_time_first'},
+            #'zone_time_last': {'type': 'datetime', 'object_relation': 'zone_time_last'}
         }
         self.comment = 'Result from a %s lookup on DNSDB about the %s: %s'
 
